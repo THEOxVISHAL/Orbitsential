@@ -46,3 +46,12 @@ wandb/
 demo_rgb.tif.aux.xml
 lucknow_3d_dashboard*.html
 assets/comprehensive_architecture_diagram.jpg
+
+# Temporary & Personal Documents
+Vishal_Maurya_Resume*
+resume_page_*.png
+page_*.png
+Synopsis_Report.pdf
+bbdu_logo.jpeg
+synopsis_generator/
+

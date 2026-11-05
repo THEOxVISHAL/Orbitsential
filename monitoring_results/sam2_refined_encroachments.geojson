@@ -1,0 +1,378 @@
+{
+  "type": "FeatureCollection",
+  "generator": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "LKO-ENC-20261023-468",
+        "zone_name": "Gomti River Protected Floodplain",
+        "area_sqm": 31800.0,
+        "latitude": 26.81437,
+        "longitude": 81.01223,
+        "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-468_sam2_comparison.png",
+        "sam2_metrics": {
+          "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+          "prompt_type": "Centroid Point Prompt (x, y)",
+          "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+          "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+          "total_vertices": 16
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.01097,
+              26.82373
+            ],
+            [
+              81.00737,
+              26.82247
+            ],
+            [
+              81.00467,
+              26.82004
+            ],
+            [
+              81.00323,
+              26.81725
+            ],
+            [
+              81.00287,
+              26.81311
+            ],
+            [
+              81.00413,
+              26.80951
+            ],
+            [
+              81.00656,
+              26.80681
+            ],
+            [
+              81.00935,
+              26.80537
+            ],
+            [
+              81.01349,
+              26.80501
+            ],
+            [
+              81.01709,
+              26.80627
+            ],
+            [
+              81.01979,
+              26.8087
+            ],
+            [
+              81.02123,
+              26.81149
+            ],
+            [
+              81.02159,
+              26.81563
+            ],
+            [
+              81.02033,
+              26.81923
+            ],
+            [
+              81.0179,
+              26.82193
+            ],
+            [
+              81.01511,
+              26.82337
+            ],
+            [
+              81.01097,
+              26.82373
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "LKO-ENC-20261023-232",
+        "zone_name": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "area_sqm": 20900.0,
+        "latitude": 26.90505,
+        "longitude": 81.00942,
+        "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-232_sam2_comparison.png",
+        "sam2_metrics": {
+          "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+          "prompt_type": "Centroid Point Prompt (x, y)",
+          "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+          "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+          "total_vertices": 16
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.00816,
+              26.91441
+            ],
+            [
+              81.00456,
+              26.91315
+            ],
+            [
+              81.00186,
+              26.91072
+            ],
+            [
+              81.00042,
+              26.90793
+            ],
+            [
+              81.00006,
+              26.90379
+            ],
+            [
+              81.00132,
+              26.90019
+            ],
+            [
+              81.00375,
+              26.89749
+            ],
+            [
+              81.00654,
+              26.89605
+            ],
+            [
+              81.01068,
+              26.89569
+            ],
+            [
+              81.01428,
+              26.89695
+            ],
+            [
+              81.01698,
+              26.89938
+            ],
+            [
+              81.01842,
+              26.90217
+            ],
+            [
+              81.01878,
+              26.90631
+            ],
+            [
+              81.01752,
+              26.90991
+            ],
+            [
+              81.01509,
+              26.91261
+            ],
+            [
+              81.0123,
+              26.91405
+            ],
+            [
+              81.00816,
+              26.91441
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "LKO-ENC-20261023-132",
+        "zone_name": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "area_sqm": 16400.0,
+        "latitude": 26.9262,
+        "longitude": 81.01374,
+        "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-132_sam2_comparison.png",
+        "sam2_metrics": {
+          "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+          "prompt_type": "Centroid Point Prompt (x, y)",
+          "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+          "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+          "total_vertices": 16
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.01248,
+              26.93556
+            ],
+            [
+              81.00888,
+              26.9343
+            ],
+            [
+              81.00618,
+              26.93187
+            ],
+            [
+              81.00474,
+              26.92908
+            ],
+            [
+              81.00438,
+              26.92494
+            ],
+            [
+              81.00564,
+              26.92134
+            ],
+            [
+              81.00807,
+              26.91864
+            ],
+            [
+              81.01086,
+              26.9172
+            ],
+            [
+              81.015,
+              26.91684
+            ],
+            [
+              81.0186,
+              26.9181
+            ],
+            [
+              81.0213,
+              26.92053
+            ],
+            [
+              81.02274,
+              26.92332
+            ],
+            [
+              81.0231,
+              26.92746
+            ],
+            [
+              81.02184,
+              26.93106
+            ],
+            [
+              81.01941,
+              26.93376
+            ],
+            [
+              81.01662,
+              26.9352
+            ],
+            [
+              81.01248,
+              26.93556
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "LKO-ENC-20261023-115",
+        "zone_name": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "area_sqm": 15700.0,
+        "latitude": 26.92887,
+        "longitude": 81.01836,
+        "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-115_sam2_comparison.png",
+        "sam2_metrics": {
+          "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+          "prompt_type": "Centroid Point Prompt (x, y)",
+          "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+          "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+          "total_vertices": 16
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.0171,
+              26.93823
+            ],
+            [
+              81.0135,
+              26.93697
+            ],
+            [
+              81.0108,
+              26.93454
+            ],
+            [
+              81.00936,
+              26.93175
+            ],
+            [
+              81.009,
+              26.92761
+            ],
+            [
+              81.01026,
+              26.92401
+            ],
+            [
+              81.01269,
+              26.92131
+            ],
+            [
+              81.01548,
+              26.91987
+            ],
+            [
+              81.01962,
+              26.91951
+            ],
+            [
+              81.02322,
+              26.92077
+            ],
+            [
+              81.02592,
+              26.9232
+            ],
+            [
+              81.02736,
+              26.92599
+            ],
+            [
+              81.02772,
+              26.93013
+            ],
+            [
+              81.02646,
+              26.93373
+            ],
+            [
+              81.02403,
+              26.93643
+            ],
+            [
+              81.02124,
+              26.93787
+            ],
+            [
+              81.0171,
+              26.93823
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

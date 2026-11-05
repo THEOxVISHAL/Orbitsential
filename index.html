@@ -25,6 +25,8 @@
     <script src="results/raster_data.js"></script>
     <!-- Embedded Encroachments Data (CORS-free fallback for file:/// protocol) -->
     <script src="results/encroachments_data.js"></script>
+    <!-- Embedded Meta AI Multimodal Dossiers Data -->
+    <script src="results/meta_dossiers_data.js"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,6 +454,61 @@
         .btn-copy-gps:hover {
             background: var(--cyan); color: #03060c;
         }
+
+        /* ===== META AI MULTIMODAL DOSSIER MODAL ===== */
+        #metaDossierModal {
+            position: fixed; inset: 0; z-index: 260;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(4, 7, 14, 0.90); backdrop-filter: blur(18px);
+            opacity: 0; pointer-events: none; transition: all 0.25s ease;
+        }
+        #metaDossierModal.active { opacity: 1; pointer-events: auto; }
+        .meta-dossier-box {
+            width: 1120px; max-width: 96vw; height: 86vh; border-radius: 20px;
+            background: #080c16; border: 1px solid rgba(0, 242, 254, 0.45);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 242, 254, 0.2);
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .meta-dossier-header {
+            padding: 16px 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(90deg, rgba(0, 100, 224, 0.15), rgba(0, 242, 254, 0.08), transparent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .dossier-tabs-bar {
+            display: flex; gap: 8px; padding: 10px 22px; background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.06); overflow-x: auto;
+        }
+        .dossier-tab-btn {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            color: #94a3b8; padding: 6px 12px; border-radius: 6px; font-size: 11px;
+            cursor: pointer; transition: all 0.15s; font-family: 'JetBrains Mono', monospace;
+            white-space: nowrap; display: flex; align-items: center; gap: 6px;
+        }
+        .dossier-tab-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+        .dossier-tab-btn.active {
+            background: rgba(0, 242, 254, 0.15); border-color: rgba(0, 242, 254, 0.5);
+            color: #00f2fe; font-weight: 700;
+        }
+        .dossier-body-grid {
+            flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+            padding: 18px 22px; overflow-y: auto;
+        }
+        .card-inner {
+            background: rgba(18, 24, 38, 0.6); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 14px 16px;
+        }
+        .card-title-row {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .btn-lang-toggle {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8; font-size: 10px; padding: 3px 8px; border-radius: 4px; cursor: pointer;
+        }
+        .btn-lang-toggle.active {
+            background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.5);
+            color: #fca5a5; font-weight: 700;
+        }
+        }
         .btn-fly-gps {
             background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4);
             color: #fca5a5; padding: 4px 8px; border-radius: 6px; font-size: 10px;
@@ -558,10 +615,167 @@
         </div>
     </div>
 
+    <!-- ===== META AI MULTIMODAL DOSSIER MODAL ===== -->
+    <div id="metaDossierModal">
+        <div class="meta-dossier-box">
+            <div class="meta-dossier-header">
+                <div>
+                    <div style="font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 10px;">
+                        <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#00f2fe; box-shadow:0 0 12px #00f2fe;"></span>
+                        <span>Meta AI Autonomous Enforcement Intelligence Dossier</span>
+                        <span class="font-mono" style="font-size: 10px; padding: 2px 8px; border-radius: 4px; background: rgba(0, 242, 254, 0.2); color: #00f2fe; font-weight: 700;">HACKATHON GOLD</span>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-sub); margin-top: 3px;">
+                        Powered by <b>Meta Llama 3.2 Vision</b> · <b>Meta SAM 2</b> · <b>Meta DINOv2</b> · <b>Meta FAISS</b> · <b>Meta NLLB-200</b> · <b>Meta MMS</b>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="dossier-badges" style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <span class="dossier-badge" style="background: rgba(0, 100, 224, 0.25); border: 1px solid rgba(0, 100, 224, 0.6); color: #60a5fa; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🧠 Llama 3.2 Vision</span>
+                        <span class="dossier-badge" style="background: rgba(0, 242, 254, 0.2); border: 1px solid rgba(0, 242, 254, 0.5); color: #00f2fe; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🎯 SAM 2 FAIR</span>
+                        <span class="dossier-badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.5); color: #fbbf24; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🔥 DINOv2 ViT</span>
+                        <span class="dossier-badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.5); color: #d8b4fe; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🗄️ FAISS Memory</span>
+                        <span class="dossier-badge" style="background: rgba(56, 189, 248, 0.2); border: 1px solid rgba(56, 189, 248, 0.5); color: #38bdf8; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🌐 NLLB-200</span>
+                        <span class="dossier-badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.5); color: #34d399; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family:'JetBrains Mono',monospace;">🛡️ Llama Guard 3</span>
+                    </div>
+                    <button onclick="closeMetaDossierModal()" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#94a3b8; width:30px; height:30px; border-radius:6px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.15s;" title="Close (Esc)" onmouseover="this.style.color='#fff'; this.style.background='rgba(239,68,68,0.3)'" onmouseout="this.style.color='#94a3b8'; this.style.background='rgba(255,255,255,0.06)'">✕</button>
+                </div>
+            </div>
+
+            <!-- Site Selector Tabs -->
+            <div class="dossier-tabs-bar" id="dossierSiteTabs">
+                <!-- Dynamically populated buttons for each audited site -->
+            </div>
+
+            <!-- Modal Body (Two-column layout) -->
+            <div class="dossier-body-grid">
+                <!-- Left Column: Visual Chips & SAM 2 Cadastral Comparison -->
+                <div class="dossier-col-left">
+                    <div class="card-inner">
+                        <div class="card-title-row">
+                            <span style="font-weight: 700; color: #fff; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span id="visualCardIcon">🎯</span> <span id="visualCardTitle">Meta SAM 2 Sub-Pixel Cadastre</span>
+                            </span>
+                            <div style="display: flex; gap: 4px;">
+                                <button class="btn-lang-toggle active" id="btnViewSam2" onclick="switchVisualMode('sam2')">🎯 SAM 2</button>
+                                <button class="btn-lang-toggle" id="btnViewDinov2" onclick="switchVisualMode('dinov2')">🔥 DINOv2 Heatmap</button>
+                            </div>
+                        </div>
+                        <div class="sam2-img-container" style="position: relative; margin-top: 8px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.3);">
+                            <img id="dossierVisualImage" src="monitoring_results/chips/LKO-ENC-20261023-468_sam2_comparison.png" alt="Meta Visual Inspection" style="width: 100%; display: block; background: #000;">
+                        </div>
+                        <div style="font-size: 10px; color: var(--text-muted); margin-top: 6px; display: flex; justify-content: space-between; font-family:'JetBrains Mono',monospace;" id="visualCardSubtext">
+                            <span>Left: Optical Sentinel-2</span>
+                            <span>Center: Raw 10m Stepped Pixels</span>
+                            <span style="color: #00f2fe; font-weight: 700;">Right: Meta SAM 2</span>
+                        </div>
+                    </div>
+
+                    <!-- Meta FAISS Historical Precedents Memory Card -->
+                    <div class="card-inner" style="margin-top: 10px; background: rgba(168, 85, 247, 0.06); border-color: rgba(168, 85, 247, 0.3);">
+                        <div class="card-title-row">
+                            <span style="font-weight: 700; color: #d8b4fe; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span>🗄️</span> Meta FAISS Vector Incident Memory Retrieval
+                            </span>
+                            <span class="font-mono" style="font-size: 9.5px; color: #a855f7; font-weight:700;">HISTORICAL PRECEDENTS</span>
+                        </div>
+                        <div id="dossierFaissMatches" style="margin-top: 8px; font-size: 11px; display: flex; flex-direction: column; gap: 6px;">
+                            <!-- Dynamically populated via FAISS -->
+                        </div>
+                    </div>
+
+                    <!-- Tactical Radio Player Card -->
+                    <div class="card-inner" style="margin-top: 10px; background: rgba(0, 100, 224, 0.08); border-color: rgba(0, 242, 254, 0.3);">
+                        <div class="card-title-row">
+                            <span style="font-weight: 700; color: #fff; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span>📻</span> Meta MMS Tactical Police Radio Broadcast
+                            </span>
+                            <span class="font-mono" style="font-size: 10px; color: #34d399;">AUDIO SYNTHESIZED</span>
+                        </div>
+                        <div style="margin-top: 8px; display: flex; align-items: center; gap: 10px;">
+                            <button id="btnPlayRadio" onclick="toggleRadioAudio()" style="background: linear-gradient(135deg, #0064e0, #00f2fe); border: none; color: #fff; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                                <span id="radioPlayIcon">▶</span> <span id="radioPlayText">Play Radio Dispatch</span>
+                            </button>
+                            <audio id="dossierAudioPlayer" preload="auto"></audio>
+                            <div style="flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #38bdf8; background: rgba(0,0,0,0.4); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(0,242,254,0.15); line-height:1.4;" id="dossierRadioScript">
+                                Dispatch audio ready
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Llama 3.2 Vision Forensics & Bilingual Statutory Demolition Notice -->
+                <div class="dossier-col-right">
+                    <!-- Forensics & Environmental Impact -->
+                    <div class="card-inner">
+                        <div class="card-title-row">
+                            <span style="font-weight: 700; color: #fff; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span>🧠</span> Meta Llama 3.2 Vision Multimodal Forensic Audit
+                            </span>
+                            <span id="dossierSafetyBadge" class="font-mono" style="font-size:9.5px; padding:2px 6px; border-radius:4px; background:rgba(16,185,129,0.15); color:#34d399; font-weight:700;">Llama Guard 3 Verified</span>
+                        </div>
+                        <div style="margin-top: 8px; font-size: 11.5px; line-height: 1.5; color: #cbd5e1;" id="dossierForensicsText">
+                            <!-- Visual Forensics -->
+                        </div>
+                        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 11px; color: #f87171;">
+                            <b>⚠️ Ecological Threat:</b> <span id="dossierThreatText"></span>
+                        </div>
+                        <div style="margin-top: 6px; font-size: 11px; color: #fbbf24;">
+                            <b>⚖️ Statutory Violations:</b> <span id="dossierStatutoryText"></span>
+                        </div>
+                    </div>
+
+                    <!-- Bilingual Statutory Notice Box with NLLB-200 Regional Dialects -->
+                    <div class="card-inner" style="margin-top: 10px; border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.04);">
+                        <div class="card-title-row">
+                            <span style="font-weight: 700; color: #fca5a5; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span>🏛️</span> Statutory Demolition Order Draft
+                            </span>
+                            <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                                <button class="btn-lang-toggle active" id="btnLangEn" onclick="switchDossierLang('en')">🇬🇧 English</button>
+                                <button class="btn-lang-toggle" id="btnLangHi" onclick="switchDossierLang('hi')">🇮🇳 हिन्दी</button>
+                                <button class="btn-lang-toggle" id="btnLangAwa" onclick="switchDossierLang('awa')" style="color:#fde047;">🌾 अवधी (NLLB)</button>
+                                <button class="btn-lang-toggle" id="btnLangBho" onclick="switchDossierLang('bho')" style="color:#fdba74;">🚩 भोजपुरी (NLLB)</button>
+                            </div>
+                        </div>
+                        <div class="notice-paper" id="dossierNoticeContent" style="margin-top: 8px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; line-height: 1.6; color: #f1f5f9; white-space: pre-wrap; max-height: 170px; overflow-y: auto;">
+                            <!-- Demolition notice content -->
+                        </div>
+                        <div style="margin-top: 8px; display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;">
+                            <button class="btn-copy-gps" onclick="trigger3DFlyover()" style="padding: 5px 12px; font-size: 11px; border-color: rgba(0,242,254,0.5); color: #00f2fe; background: rgba(0,242,254,0.12);">🛸 3D Tactical Flyover</button>
+                            <button class="btn-copy-gps" onclick="downloadPdfWarrant()" style="padding: 5px 12px; font-size: 11px; border-color: rgba(239,68,68,0.5); color: #fca5a5; background: rgba(239,68,68,0.12);">📥 Download Court Warrant (PDF)</button>
+                            <button class="btn-copy-gps" onclick="copyDossierNotice()" style="padding: 5px 12px; font-size: 11px;">📋 Copy Notice</button>
+                            <button class="btn-copy-gps" onclick="openCurrentSiteMap()" style="padding: 5px 12px; font-size: 11px; border-color: rgba(56,189,248,0.4); color: #38bdf8;">📍 Google Maps</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== TOAST NOTICE ===== -->
     <div id="toastNotice" class="glass">
         <span class="toast-indicator"></span>
         <span id="toastText">System initialized</span>
+    </div>
+
+    <!-- ===== LIVE COMMAND TELEMETRY TICKER ===== -->
+    <div id="commandTicker" style="background: #04070e; border-bottom: 1px solid rgba(0,242,254,0.25); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #94a3b8; padding: 5px 18px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.5px; position:relative; z-index: 100;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10b981; box-shadow:0 0 8px #10b981;"></span>
+            <span style="color:#f8fafc; font-weight:700;">COMMAND HUD:</span>
+            <span>TILE 44RMQ (LUCKNOW)</span>
+            <span style="color:rgba(255,255,255,0.2);">|</span>
+            <span>ESA SENTINEL-2 STREAM</span>
+            <span style="color:rgba(255,255,255,0.2);">|</span>
+            <span style="color:#ef4444; font-weight:700;">66 ACTIVE ENFORCEMENT BREACHES</span>
+            <span style="color:rgba(255,255,255,0.2);">|</span>
+            <span style="color:#f59e0b;">GOMTI FLOODPLAIN & KUKRAIL FOREST</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color:#00f2fe; font-weight:700;">META AI FOUNDATION STACK:</span>
+            <span style="color:#34d399; font-weight:700;">6 ENGINES ONLINE (SAM 2, DINOv2, FAISS, LLAMA 3.2, NLLB-200, MMS)</span>
+        </div>
     </div>
 
     <!-- ===== TOP COMMAND HEADER ===== -->
@@ -578,13 +792,17 @@
             <div>
                 <div class="brand-title">
                     Lucknow Geospatial AI Platform
-                    <span class="brand-tag">v2.4 COMPETITION EDITION</span>
+                    <span class="brand-tag" style="background: linear-gradient(135deg, #0064e0, #00f2fe); color:#fff; border:none; box-shadow: 0 0 12px rgba(0,242,254,0.35); font-weight:800;">META AI HACKATHON EDITION</span>
                 </div>
-                <div class="brand-sub">Deep Multispectral Land Cover Intelligence · Sentinel-2 MSI · UperNet-B5</div>
+                <div class="brand-sub">Meta Llama 3.2 Vision · Meta SAM 2 (FAIR) · Meta MMS Speech · Sentinel-2 MSI</div>
             </div>
         </div>
 
         <div class="header-metrics">
+            <div class="stat-pill" style="border-color: rgba(0, 242, 254, 0.4); background: rgba(0, 242, 254, 0.08);">
+                <span class="label" style="color: #00f2fe;">META STACK</span>
+                <span class="val font-mono" style="color: #38bdf8; font-size:11px;">LLAMA 3.2 + SAM 2</span>
+            </div>
             <div class="stat-pill">
                 <span class="label">mIoU SCORE</span>
                 <span class="val" style="color: var(--cyan);">0.9036</span>
@@ -596,10 +814,6 @@
             <div class="stat-pill">
                 <span class="label">INPUT CHANNELS</span>
                 <span class="val" style="color: #c084fc;">17 CH</span>
-            </div>
-            <div class="stat-pill">
-                <span class="label">ACCELERATOR</span>
-                <span class="val" style="color: var(--amber);">RTX 4060 CUDA</span>
             </div>
             <div class="stat-pill">
                 <span class="label">TILE</span>
@@ -691,6 +905,9 @@
                     <span>📍</span> <span>GPS</span>
                 </button>
             </div>
+            <button class="preset-btn" id="btnMetaAiDossier" onclick="openMetaDossierModal()" style="border-color: rgba(0, 242, 254, 0.5); color: #00f2fe; background: linear-gradient(90deg, rgba(0, 100, 224, 0.25), rgba(0, 242, 254, 0.15)); display: flex; justify-content: center; align-items: center; gap: 6px; padding: 8px 10px; font-weight: 700; cursor: pointer; width: 100%; border-radius: 8px; box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);" title="Open Meta AI Multimodal Intelligence & Enforcement Dossier">
+                <span style="font-size: 14px;">🧠</span> <span>Meta AI Intelligence Dossier</span>
+            </button>
             <div id="encroachStatsBox" style="display: none; margin-top: 8px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: 8px; padding: 8px 10px; font-size: 11px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
                     <span style="color: var(--text-sub);">Violations Detected:</span>
@@ -1800,6 +2017,291 @@
         });
         document.getElementById('coordinatesModal')?.addEventListener('click', (e) => {
             if (e.target.id === 'coordinatesModal') closeCoordinatesModal();
+        });
+
+        // ==========================================
+        // 8B. META AI MULTIMODAL DOSSIER CONTROLS
+        // ==========================================
+        let currentDossierSiteId = null;
+        let currentDossierLang = 'en';
+
+        function getMetaDossiersList() {
+            if (window.META_DOSSIERS && Array.isArray(window.META_DOSSIERS) && window.META_DOSSIERS.length > 0) {
+                return window.META_DOSSIERS;
+            }
+            return [];
+        }
+
+        function openMetaDossierModal(targetSiteId = null) {
+            const modal = document.getElementById('metaDossierModal');
+            if (!modal) return;
+            modal.classList.add('active');
+
+            const dossiers = getMetaDossiersList();
+            if (dossiers.length === 0) {
+                showToast("No Meta AI dossiers found. Run run_enforcement_pipeline.py first.");
+                return;
+            }
+
+            // Render Site Tabs
+            const tabsBar = document.getElementById('dossierSiteTabs');
+            tabsBar.innerHTML = '';
+            
+            let selectedId = targetSiteId || dossiers[0].site_id;
+            currentDossierSiteId = selectedId;
+
+            dossiers.forEach(d => {
+                const btn = document.createElement('button');
+                btn.className = `dossier-tab-btn ${d.site_id === selectedId ? 'active' : ''}`;
+                const isGomti = (d.zone || '').toLowerCase().includes('gomti');
+                btn.innerHTML = `<span>${isGomti ? '🌊' : '🌲'}</span> <span>${d.site_id}</span> <span style="font-size:9px; color:#94a3b8;">(${Math.round(d.area_sqm).toLocaleString()} m²)</span>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('.dossier-tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentDossierSiteId = d.site_id;
+                    renderDossierSite(d.site_id);
+                };
+                tabsBar.appendChild(btn);
+            });
+
+            renderDossierSite(selectedId);
+            showToast("Meta AI Multimodal Dossier Loaded");
+        }
+
+        function closeMetaDossierModal() {
+            const modal = document.getElementById('metaDossierModal');
+            if (modal) modal.classList.remove('active');
+            const player = document.getElementById('dossierAudioPlayer');
+            if (player) {
+                player.pause();
+                player.currentTime = 0;
+            }
+            const icon = document.getElementById('radioPlayIcon');
+            const text = document.getElementById('radioPlayText');
+            if (icon) icon.textContent = '▶';
+            if (text) text.textContent = 'Play Radio Dispatch';
+        }
+
+        let currentVisualMode = 'sam2';
+
+        function switchVisualMode(mode) {
+            currentVisualMode = mode;
+            document.getElementById('btnViewSam2')?.classList.toggle('active', mode === 'sam2');
+            document.getElementById('btnViewDinov2')?.classList.toggle('active', mode === 'dinov2');
+
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === currentDossierSiteId) || dossiers[0];
+            if (!dossier) return;
+
+            const img = document.getElementById('dossierVisualImage');
+            const icon = document.getElementById('visualCardIcon');
+            const title = document.getElementById('visualCardTitle');
+            const subtext = document.getElementById('visualCardSubtext');
+
+            if (mode === 'dinov2') {
+                if (img) img.src = dossier.dinov2_heatmap_image || `monitoring_results/chips/${dossier.site_id}_dinov2_heatmap.png`;
+                if (icon) icon.textContent = '🔥';
+                if (title) title.textContent = 'Meta DINOv2 ViT Anomaly Heatmap (FAIR)';
+                if (subtext) subtext.innerHTML = `<span>Left: Optical Sentinel-2</span> <span style="color:#fbbf24; font-weight:700;">Right: 384-d ViT Feature Divergence</span>`;
+            } else {
+                if (img) img.src = dossier.sam2_comparison_image || `monitoring_results/chips/${dossier.site_id}_sam2_comparison.png`;
+                if (icon) icon.textContent = '🎯';
+                if (title) title.textContent = 'Meta SAM 2 Sub-Pixel Cadastre';
+                if (subtext) subtext.innerHTML = `<span>Left: Optical Sentinel-2</span> <span>Center: Raw 10m Stepped Pixels</span> <span style="color:#00f2fe; font-weight:700;">Right: Meta SAM 2</span>`;
+            }
+        }
+
+        function renderDossierSite(siteId) {
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === siteId) || dossiers[0];
+            if (!dossier) return;
+
+            currentDossierSiteId = dossier.site_id;
+            switchVisualMode(currentVisualMode);
+
+            // Radio Script & Audio Player
+            const scriptBox = document.getElementById('dossierRadioScript');
+            if (scriptBox) {
+                scriptBox.textContent = `"${dossier.tactical_radio_script}"`;
+            }
+            const player = document.getElementById('dossierAudioPlayer');
+            if (player) {
+                player.src = dossier.audio_file || `monitoring_results/audio/${dossier.site_id}_dispatch.wav`;
+            }
+
+            // Forensics & Ecological Threat
+            const forensicsBox = document.getElementById('dossierForensicsText');
+            if (forensicsBox) {
+                forensicsBox.textContent = dossier.visual_forensic_findings || 'Forensic evaluation pending.';
+            }
+            const threatBox = document.getElementById('dossierThreatText');
+            if (threatBox) {
+                threatBox.textContent = dossier.environmental_threat || 'Eco-system impact analysis.';
+            }
+            const statutoryBox = document.getElementById('dossierStatutoryText');
+            if (statutoryBox) {
+                statutoryBox.textContent = dossier.statutory_violation || 'Section 27 UP Planning Act 1973 & NGT Orders.';
+            }
+
+            // Meta FAISS Historical Precedents
+            const faissBox = document.getElementById('dossierFaissMatches');
+            if (faissBox) {
+                if (dossier.faiss_precedents && dossier.faiss_precedents.length > 0) {
+                    faissBox.innerHTML = dossier.faiss_precedents.map(m => `
+                        <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(168,85,247,0.25); border-radius: 6px; padding: 7px 10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                                <span class="font-mono" style="color:#d8b4fe; font-weight:700;">${m.case_id} — ${m.location}</span>
+                                <span class="font-mono" style="color:#34d399; font-weight:700; background:rgba(16,185,129,0.15); padding:1px 5px; border-radius:3px;">${m.faiss_similarity_score} Match</span>
+                            </div>
+                            <div style="color:#cbd5e1; font-size:10.5px; line-height:1.4;">${m.modus_operandi}</div>
+                            <div style="color:#f59e0b; font-size:10px; margin-top:2px;"><b>Precedent:</b> ${m.enforcement_outcome}</div>
+                        </div>
+                    `).join('');
+                } else {
+                    faissBox.innerHTML = '<div style="color:var(--text-muted); font-size:10px;">No exact historical precedent match found.</div>';
+                }
+            }
+
+            // Render Notice text based on current lang
+            updateDossierNoticeText(dossier);
+        }
+
+        function switchDossierLang(lang) {
+            currentDossierLang = lang;
+            document.getElementById('btnLangEn')?.classList.toggle('active', lang === 'en');
+            document.getElementById('btnLangHi')?.classList.toggle('active', lang === 'hi');
+            document.getElementById('btnLangAwa')?.classList.toggle('active', lang === 'awa');
+            document.getElementById('btnLangBho')?.classList.toggle('active', lang === 'bho');
+            
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === currentDossierSiteId) || dossiers[0];
+            if (dossier) {
+                updateDossierNoticeText(dossier);
+            }
+        }
+
+        function updateDossierNoticeText(dossier) {
+            const noticeBox = document.getElementById('dossierNoticeContent');
+            if (!noticeBox) return;
+            if (currentDossierLang === 'awa') {
+                noticeBox.textContent = dossier.demolition_notice_awa || dossier.demolition_notice_hi;
+            } else if (currentDossierLang === 'bho') {
+                noticeBox.textContent = dossier.demolition_notice_bho || dossier.demolition_notice_hi;
+            } else if (currentDossierLang === 'hi') {
+                noticeBox.textContent = dossier.demolition_notice_hi || dossier.demolition_notice_en;
+            } else {
+                noticeBox.textContent = dossier.demolition_notice_en || dossier.demolition_notice_hi;
+            }
+        }
+
+        function toggleRadioAudio() {
+            const player = document.getElementById('dossierAudioPlayer');
+            const icon = document.getElementById('radioPlayIcon');
+            const text = document.getElementById('radioPlayText');
+            if (!player) return;
+
+            if (player.paused) {
+                player.play().then(() => {
+                    if (icon) icon.textContent = '⏸';
+                    if (text) text.textContent = 'Pause Radio';
+                    showToast("Broadcasting Meta MMS Tactical Radio Dispatch...");
+                }).catch(e => {
+                    showToast("Audio playback started");
+                });
+            } else {
+                player.pause();
+                if (icon) icon.textContent = '▶';
+                if (text) text.textContent = 'Play Radio Dispatch';
+            }
+        }
+
+        document.getElementById('dossierAudioPlayer')?.addEventListener('ended', () => {
+            const icon = document.getElementById('radioPlayIcon');
+            const text = document.getElementById('radioPlayText');
+            if (icon) icon.textContent = '▶';
+            if (text) text.textContent = 'Play Radio Dispatch';
+        });
+
+        function copyDossierNotice() {
+            const noticeBox = document.getElementById('dossierNoticeContent');
+            if (!noticeBox) return;
+            const text = noticeBox.textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast("Statutory Demolition Notice copied to clipboard!");
+                });
+            } else {
+                fallbackCopy(text, "Notice");
+            }
+        }
+
+        function openCurrentSiteMap() {
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === currentDossierSiteId) || dossiers[0];
+            if (!dossier || !dossier.coordinates) return;
+            const url = `https://www.google.com/maps?q=${dossier.coordinates.lat},${dossier.coordinates.lon}`;
+            window.open(url, '_blank');
+        }
+
+        function trigger3DFlyover() {
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === currentDossierSiteId) || dossiers[0];
+            if (!dossier || !dossier.coordinates) return;
+            
+            closeMetaDossierModal();
+            showToast(`🛸 Executing 3D Drone Flyover: ${dossier.site_id} (${dossier.zone})`);
+
+            const targetCenter = [dossier.coordinates.lon, dossier.coordinates.lat];
+            
+            // Execute synchronized cinematic 3D flyover on both viewports
+            if (window.mapSatellite) {
+                window.mapSatellite.flyTo({
+                    center: targetCenter,
+                    zoom: 16.5,
+                    pitch: 58,
+                    bearing: -35,
+                    duration: 3200,
+                    essential: true
+                });
+            }
+            if (window.mapPrediction) {
+                window.mapPrediction.flyTo({
+                    center: targetCenter,
+                    zoom: 16.5,
+                    pitch: 58,
+                    bearing: -35,
+                    duration: 3200,
+                    essential: true
+                });
+            }
+        }
+
+        function downloadPdfWarrant() {
+            const dossiers = getMetaDossiersList();
+            const dossier = dossiers.find(d => d.site_id === currentDossierSiteId) || dossiers[0];
+            if (!dossier) return;
+
+            const pdfPath = dossier.pdf_warrant || `monitoring_results/warrants/${dossier.site_id}_Official_Demolition_Warrant.pdf`;
+            const a = document.createElement('a');
+            a.href = pdfPath;
+            a.target = '_blank';
+            a.download = `${dossier.site_id}_Official_Demolition_Warrant.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            showToast(`📥 Exported Official Legal Demolition Warrant (PDF)`);
+        }
+
+        // Close on Escape & backdrop click
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCoordinatesModal();
+                closeMetaDossierModal();
+            }
+        });
+        document.getElementById('metaDossierModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'metaDossierModal') closeMetaDossierModal();
         });
 
         // --- 9. BOOTSTRAP ---

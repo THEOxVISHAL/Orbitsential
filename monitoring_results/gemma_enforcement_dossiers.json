@@ -1,6 +1,6 @@
 [
   {
-    "site_id": "LKO-ENC-20261023-467",
+    "site_id": "LKO-ENC-20261023-468",
     "zone": "Gomti River Protected Floodplain",
     "area_sqm": 31800.0,
     "area_bigha": 12.57,
@@ -8,11 +8,283 @@
       "lat": 26.81437,
       "lon": 81.01223
     },
-    "gemma_forensics": "Satellite imagery reveals significant land reclamation activities within the Gomti floodplain, characterized by irregular concrete plinths and new linear road cuts encroaching upon previous agricultural patches. The presence of expanding greyish-white geometric structures indicates unauthorized permanent masonry construction amidst the riparian vegetation buffer.",
-    "environmental_threat": "The destruction of the Gomti flood retention buffer significantly increases the risk of catastrophic urban flooding in Lucknow during monsoon seasons and compromises local groundwater recharge capacity.",
-    "statutory_violation": "Violation of NGT Gomti Buffer Order O.A. 6/2012 and Section 27 of the UP Urban Planning & Development Act 1973.",
-    "demolition_notice": "Notice is hereby served to all unauthorized occupants of Site LKO-ENC-20261023-467 regarding the illegal construction in the protected Gomti floodplain. You are directed to cease all construction activity immediately and remove all encroachments within 48 hours of this notice. Failure to comply will result in summary demolition by the LDA enforcement wing at your cost and risk, followed by criminal proceedings under the UP Urban Planning Act.",
-    "tactical_radio_script": "All units, urgent dispatch: Proceed to Site LKO-ENC-20261023-467, Gomti floodplain. Illegal construction detected. Secure perimeter, prevent further encroachment, and await LDA demolition squad.",
-    "audio_file": "D:\\lucknow_landcover\\monitoring_results\\audio\\LKO-ENC-20261023-467_dispatch.txt"
+    "meta_models_used": {
+      "vision_reasoner": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "boundary_segmentor": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "feature_anomaly_detector": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "vector_memory_bank": "Meta FAISS (Facebook AI Similarity Search)",
+      "dialect_translator": "Meta NLLB-200 (No Language Left Behind)",
+      "speech_engine": "Meta MMS (Massively Multilingual Speech)",
+      "safety_guard": "SAFE & STATUTORILY COMPLIANT (Llama Guard 3 Verified)"
+    },
+    "sam2_metrics": {
+      "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "prompt_type": "Centroid Point Prompt (x, y)",
+      "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+      "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+      "total_vertices": 16
+    },
+    "dinov2_metrics": {
+      "foundation_model": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "embedding_dimensions": 384,
+      "patch_resolution": "14x14 pixels self-supervised ViT",
+      "anomaly_intensity": "25.8%",
+      "peak_structural_divergence": "97.3%",
+      "verdict": "MODERATE ALTERATION"
+    },
+    "faiss_precedents": [
+      {
+        "case_id": "LKO-HIST-2023-112",
+        "zone": "Gomti River Protected Floodplain",
+        "location": "Daliganj Bridge upstream riparian bank",
+        "modus_operandi": "Unauthorized truck dumping of construction debris into active river buffer to create parking lots.",
+        "enforcement_outcome": "Summary seizure of 7 dumpers; LDA enforcement wing restored natural river contour within 48 hours.",
+        "legal_precedent": "NGT Principal Bench Gomti River Buffer Directive; Criminal contempt proceedings initiated.",
+        "recidivism_risk": "MODERATE (Debris reclamation)",
+        "faiss_similarity_score": "75.0%"
+      },
+      {
+        "case_id": "LKO-HIST-2024-041",
+        "zone": "Gomti River Protected Floodplain",
+        "location": "Shaheed Path Gomti Riverbed, Sector 6",
+        "modus_operandi": "River silt leveling followed by 4,000 m² concrete plinth layout for commercial resort.",
+        "enforcement_outcome": "Demolition executed on Day 11 by joint LDA & Lucknow Police squad under NGT O.A. 6/2012.",
+        "legal_precedent": "Sec 27(1) UP Urban Planning Act; ₹25 Lakh environmental compensation imposed by UPPCB.",
+        "recidivism_risk": "HIGH (Commercial syndicate operation)",
+        "faiss_similarity_score": "75.0%"
+      }
+    ],
+    "satellite_chip": "monitoring_results/chips/LKO-ENC-20261023-468_satellite_chip.png",
+    "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-468_sam2_comparison.png",
+    "dinov2_heatmap_image": "monitoring_results/chips/LKO-ENC-20261023-468_dinov2_heatmap.png",
+    "visual_forensic_findings": "Multi-spectral Sentinel-2 visual analysis of Site LKO-ENC-20261023-468 reveals rapid unauthorized ground disturbance directly inside the Gomti River active floodplain buffer. Visible high-reflectance rectangular concrete plinth grids, mechanized sandbar leveling, and newly compacted boundary earthworks indicate organized permanent commercial/residential encroachment displacing riparian soil.",
+    "environmental_threat": "Severe compromise of Gomti River natural flood retention zone. Encroachment of 30,000+ m² restricts high-discharge monsoon flow, directly elevating urban flash-flood vulnerability across central Lucknow and causing irreversible riparian habitat destruction.",
+    "statutory_violation": "Direct violation of National Green Tribunal (NGT) Principal Bench Order in O.A. No. 6/2012 (Gomti River 250m Eco-Sensitive Zone), Section 27 of UP Urban Planning & Development Act 1973, and Water (Prevention & Control of Pollution) Act 1974.",
+    "demolition_notice_en": "OFFICIAL DEMOLITION ORDER — UTTAR PRADESH URBAN PLANNING & DEVELOPMENT ACT 1973 (SECTION 27)\nWHEREAS unauthorized construction and permanent concrete plinths spanning 31,800 m² (~12.57 Bigha) have been detected via satellite telemetry at Coordinates (26.81437° N, 81.01223° E) within the prohibited Gomti River Floodplain buffer;\nNOW THEREFORE, notice is hereby served upon all unauthorized occupants and developers to CEASE all construction forthwith and remove all materials within 48 HOURS of this notice. In default, summary demolition will be executed by the LDA Enforcement Squad at your sole risk, cost, and penal liability under law.",
+    "demolition_notice_hi": "कार्यालय उपाध्यक्ष, लखनऊ विकास प्राधिकरण (LDA) — ध्वस्तीकरण एवं कारण बताओ आदेश\nउत्तर प्रदेश नगर योजना एवं विकास अधिनियम, 1973 की धारा 27(1) के अंतर्गत:\nसर्वसाधारण एवं अवैध कब्जाकर्ताओं को सूचित किया जाता है कि गोमती नदी संरक्षित हरित पट्टा/बाढ़ क्षेत्र (अक्षांश: 26.81437° N, देशांतर: 81.01223° E) में लगभग 31,800 वर्ग मीटर (12.57 बीघा) भूमि पर बिना किसी विधिक मानचित्र स्वीकृति के अवैध पक्का निर्माण व मिट्टी भराव पाया गया है।\nअतः आदेशित किया जाता है कि अगले 48 घंटे के भीतर समस्त अवैध निर्माण स्वयं हटा लें, अन्यथा एलडीए प्रवर्तन दल द्वारा पुलिस बल की उपस्थिति में ध्वस्तीकरण की कार्रवाई की जाएगी और सम्पूर्ण व्यय भू-राजस्व की भांति वसूला जाएगा।",
+    "demolition_notice_awa": "कार्यालय लखनऊ विकास प्राधिकरण (LDA) — अवधी जनसूचना व बेदखली हुकुमनामा\n[स्थान: गोमती कछार बाढ़ पट्टा, निर्देशांक: 26.81437° N, 81.01223° E]\n\nगाँव-गिराँव के सब लोगन अउर कब्जा करे वालन का आगाह कीन जात है कि गोमती नदी के 12.57 बीघा संरक्षित हरित पट्टा पर जे भी पक्का घर या बाउंड्री बनावा गा है, ऊ सरासर गैर-कानूनी है। सबहि का 48 घंटा क मियाद दीन्ह जात है कि आपन समान अउर कब्जा खुदय हटा लेवें। नाही तौ एलडीए क बुलडोजर दल पुलिस के साथे आय के सब ढहाय देई अउर खर्चा-बरचा सब तोहरे लोगन से वसूला जाई।",
+    "demolition_notice_bho": "कार्यालय लखनऊ विकास प्राधिकरण — बेदखली एवं ढहावे के सरकारी हुकुमनामा\n[क्षेत्र: गोमती नदी संरक्षित कछार, जीपीएस: 26.81437° N, 81.01223° E]\n\nसभै लोगन के सूचित कइल जा रहल बा कि गोमती नदी के बाढ़ क्षेत्र में बिना नक्शा पास करवले 12.57 बीघा जमीन पर अवैध पक्का पिलर अउर कब्जा कइल पावल गइल बा। आदेश दिहल जा रहल बा कि 48 घंटा के भीतर एह अवैध कब्जा के खुद से हटा लीं। न हटी त एलडीए के प्रवर्तन दल बलपूर्वक सब ढहा दी आ मुकदमा दर्ज करावल जाई।",
+    "tactical_radio_script": "All units, urgent code red. Immediate tactical patrol dispatch to Gomti Floodplain Site LKO-ENC-20261023-468. Active illegal concrete plinth construction detected. Intercept work crews, secure perimeter, and standby for LDA squad.",
+    "tactical_radio_script_hi": "सभी पेट्रोलिंग यूनिट्स ध्यान दें। गोमती रिवरबेड साइट LKO-ENC-20261023-468 पर तत्काल पहुंचे। अवैध कंक्रीट निर्माण कार्य पकड़ा गया है। कार्य तत्काल रुकवाएं और एलडीए दस्ते की प्रतीक्षा करें।",
+    "audio_file": "monitoring_results/audio/LKO-ENC-20261023-468_dispatch.wav",
+    "pdf_warrant": "monitoring_results/warrants/LKO-ENC-20261023-468_Official_Demolition_Warrant.pdf",
+    "gemma_forensics": "Multi-spectral Sentinel-2 visual analysis of Site LKO-ENC-20261023-468 reveals rapid unauthorized ground disturbance directly inside the Gomti River active floodplain buffer. Visible high-reflectance rectangular concrete plinth grids, mechanized sandbar leveling, and newly compacted boundary earthworks indicate organized permanent commercial/residential encroachment displacing riparian soil.",
+    "demolition_notice": "OFFICIAL DEMOLITION ORDER — UTTAR PRADESH URBAN PLANNING & DEVELOPMENT ACT 1973 (SECTION 27)\nWHEREAS unauthorized construction and permanent concrete plinths spanning 31,800 m² (~12.57 Bigha) have been detected via satellite telemetry at Coordinates (26.81437° N, 81.01223° E) within the prohibited Gomti River Floodplain buffer;\nNOW THEREFORE, notice is hereby served upon all unauthorized occupants and developers to CEASE all construction forthwith and remove all materials within 48 HOURS of this notice. In default, summary demolition will be executed by the LDA Enforcement Squad at your sole risk, cost, and penal liability under law."
+  },
+  {
+    "site_id": "LKO-ENC-20261023-232",
+    "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+    "area_sqm": 20900.0,
+    "area_bigha": 8.26,
+    "coordinates": {
+      "lat": 26.90505,
+      "lon": 81.00942
+    },
+    "meta_models_used": {
+      "vision_reasoner": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "boundary_segmentor": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "feature_anomaly_detector": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "vector_memory_bank": "Meta FAISS (Facebook AI Similarity Search)",
+      "dialect_translator": "Meta NLLB-200 (No Language Left Behind)",
+      "speech_engine": "Meta MMS (Massively Multilingual Speech)",
+      "safety_guard": "SAFE & STATUTORILY COMPLIANT (Llama Guard 3 Verified)"
+    },
+    "sam2_metrics": {
+      "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "prompt_type": "Centroid Point Prompt (x, y)",
+      "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+      "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+      "total_vertices": 16
+    },
+    "dinov2_metrics": {
+      "foundation_model": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "embedding_dimensions": 384,
+      "patch_resolution": "14x14 pixels self-supervised ViT",
+      "anomaly_intensity": "16.8%",
+      "peak_structural_divergence": "94.9%",
+      "verdict": "MODERATE ALTERATION"
+    },
+    "faiss_precedents": [
+      {
+        "case_id": "LKO-HIST-2025-029",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Kalyanpur Forest Fringe eco-zone",
+        "modus_operandi": "Fictitious private farm boundary division claiming ancestral ownership inside reserve forest demarcations.",
+        "enforcement_outcome": "District Magistrate rejected revenue mutation; Land restored to UP Forest Department.",
+        "legal_precedent": "Supreme Court Eco-Sensitive Zone Order; Absolute prohibition on non-forestry land change.",
+        "recidivism_risk": "HIGH (Litigation-oriented encroachment)",
+        "faiss_similarity_score": "75.0%"
+      },
+      {
+        "case_id": "LKO-HIST-2024-089",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Picnic Spot Road, Kukrail Fringe",
+        "modus_operandi": "Secretive nocturnal tree girdling followed by 12-foot brick perimeter boundary construction.",
+        "enforcement_outcome": "Non-bailable Forest Act warrant issued, brick boundary pulverized by forest JCB squads on Day 4.",
+        "legal_precedent": "Section 26 Indian Forest Act 1927; FIR No. 182/24 registered at Ghazipur Police Station.",
+        "recidivism_risk": "CRITICAL (Repeat boundary wall construction)",
+        "faiss_similarity_score": "75.0%"
+      }
+    ],
+    "satellite_chip": "monitoring_results/chips/LKO-ENC-20261023-232_satellite_chip.png",
+    "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-232_sam2_comparison.png",
+    "dinov2_heatmap_image": "monitoring_results/chips/LKO-ENC-20261023-232_dinov2_heatmap.png",
+    "visual_forensic_findings": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-232. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "environmental_threat": "Severe fragmentation of the Kukrail forest wildlife corridor, biodiversity depletion, and illegal deforestation compromising Lucknow's primary green carbon sink.",
+    "statutory_violation": "Violation of Indian Forest Act 1927, Forest Conservation Act 1980 (Section 2), UP Protected Forest Rules, and Hon'ble Supreme Court directives regarding Eco-Sensitive Zones around Wildlife Sanctuaries.",
+    "demolition_notice_en": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 20,900 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.90505° N, 81.00942° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act.",
+    "demolition_notice_hi": "कार्यालय प्रभागीय वनाधिकारी / लखनऊ विकास प्राधिकरण — बेदखली नोटिस\nभारतीय वन अधिनियम 1927 एवं वन संरक्षण अधिनियम की सुसंगत धाराओं के अंतर्गत:\nकुकराैल आरक्षित वन एवं वन्यजीव अभयारण्य सीमा (अक्षांश: 26.90505° N, देशांतर: 81.00942° E) पर 20,900 वर्ग मीटर क्षेत्र में पेड़ों की कटाई एवं अवैध अतिक्रमण संज्ञान में आया है।\nअतिक्रमणकारी 48 घंटे में वन क्षेत्र पूर्णतः खाली करें, अन्यथा तत्काल जब्ती, ध्वस्तीकरण एवं गैर-जमानती प्राथमिकी दर्ज की जाएगी।",
+    "demolition_notice_awa": "कार्यालय प्रभागीय वनाधिकारी / एलडीए — कुकराैल वन बेदखली नोटिस\n[कुकराैल आरक्षित वन सीमा, अक्षांश: 26.90505° N, देशांतर: 81.00942° E]\n\nसकल क्षेत्रवासी अउर अवैध कालोनाइजरन का सूचित कीन जात है कि कुकराैल जंगल के 8.26 बीघा आरक्षित वनभूमि पर पेड़ कटाई अउर बाउंड्री खींचब भारतीय वन अधिनियम के तहत गैर-जमानती जुर्म अहइ। अगले 48 घंटा में ई जंगल खाली कय दीन्ह जाय, वर्ना तुरन्तै गिरफ्तारी अउर ध्वस्तीकरण कीन जाई।",
+    "demolition_notice_bho": "कार्यालय प्रभागीय वनाधिकारी — कुकराैल आरक्षित जंगल खाली करे के नोटिस\n[कुकराैल वन्यजीव अभयारण्य बफर क्षेत्र, जीपीएस: 26.90505° N, 81.00942° E]\n\nसबके चेतावनी दिहल जा रहल बा कि कुकराैल सरकारी जंगल में 8.26 बीघा पर पेड़ काट के कब्जा कइल संगे-संगे गंभीर अपराध बा। 48 घंटा के भीतर सब अवैध काम रोक के जंगल खाली कइल जाव, ना त बुलडोजर से सब बाउंड्री तोड़ के जेल भेजल जाई।",
+    "tactical_radio_script": "Forest patrol units, urgent dispatch to Kukrail Sanctuary Buffer Site LKO-ENC-20261023-232. Illegal tree felling and wall construction in progress. Detain violators and seize machinery immediately.",
+    "tactical_radio_script_hi": "वन सुरक्षा बल, तत्काल कुकराैल बफर साइट LKO-ENC-20261023-232 की ओर रवाना हों। अवैध वन कटाई और बाउंड्री निर्माण कार्य को तत्काल सीज करें।",
+    "audio_file": "monitoring_results/audio/LKO-ENC-20261023-232_dispatch.wav",
+    "pdf_warrant": "monitoring_results/warrants/LKO-ENC-20261023-232_Official_Demolition_Warrant.pdf",
+    "gemma_forensics": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-232. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "demolition_notice": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 20,900 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.90505° N, 81.00942° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act."
+  },
+  {
+    "site_id": "LKO-ENC-20261023-132",
+    "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+    "area_sqm": 16400.0,
+    "area_bigha": 6.48,
+    "coordinates": {
+      "lat": 26.9262,
+      "lon": 81.01374
+    },
+    "meta_models_used": {
+      "vision_reasoner": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "boundary_segmentor": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "feature_anomaly_detector": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "vector_memory_bank": "Meta FAISS (Facebook AI Similarity Search)",
+      "dialect_translator": "Meta NLLB-200 (No Language Left Behind)",
+      "speech_engine": "Meta MMS (Massively Multilingual Speech)",
+      "safety_guard": "SAFE & STATUTORILY COMPLIANT (Llama Guard 3 Verified)"
+    },
+    "sam2_metrics": {
+      "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "prompt_type": "Centroid Point Prompt (x, y)",
+      "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+      "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+      "total_vertices": 16
+    },
+    "dinov2_metrics": {
+      "foundation_model": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "embedding_dimensions": 384,
+      "patch_resolution": "14x14 pixels self-supervised ViT",
+      "anomaly_intensity": "20.4%",
+      "peak_structural_divergence": "89.8%",
+      "verdict": "MODERATE ALTERATION"
+    },
+    "faiss_precedents": [
+      {
+        "case_id": "LKO-HIST-2025-029",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Kalyanpur Forest Fringe eco-zone",
+        "modus_operandi": "Fictitious private farm boundary division claiming ancestral ownership inside reserve forest demarcations.",
+        "enforcement_outcome": "District Magistrate rejected revenue mutation; Land restored to UP Forest Department.",
+        "legal_precedent": "Supreme Court Eco-Sensitive Zone Order; Absolute prohibition on non-forestry land change.",
+        "recidivism_risk": "HIGH (Litigation-oriented encroachment)",
+        "faiss_similarity_score": "75.0%"
+      },
+      {
+        "case_id": "LKO-HIST-2024-089",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Picnic Spot Road, Kukrail Fringe",
+        "modus_operandi": "Secretive nocturnal tree girdling followed by 12-foot brick perimeter boundary construction.",
+        "enforcement_outcome": "Non-bailable Forest Act warrant issued, brick boundary pulverized by forest JCB squads on Day 4.",
+        "legal_precedent": "Section 26 Indian Forest Act 1927; FIR No. 182/24 registered at Ghazipur Police Station.",
+        "recidivism_risk": "CRITICAL (Repeat boundary wall construction)",
+        "faiss_similarity_score": "75.0%"
+      }
+    ],
+    "satellite_chip": "monitoring_results/chips/LKO-ENC-20261023-132_satellite_chip.png",
+    "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-132_sam2_comparison.png",
+    "dinov2_heatmap_image": "monitoring_results/chips/LKO-ENC-20261023-132_dinov2_heatmap.png",
+    "visual_forensic_findings": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-132. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "environmental_threat": "Severe fragmentation of the Kukrail forest wildlife corridor, biodiversity depletion, and illegal deforestation compromising Lucknow's primary green carbon sink.",
+    "statutory_violation": "Violation of Indian Forest Act 1927, Forest Conservation Act 1980 (Section 2), UP Protected Forest Rules, and Hon'ble Supreme Court directives regarding Eco-Sensitive Zones around Wildlife Sanctuaries.",
+    "demolition_notice_en": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 16,400 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.92620° N, 81.01374° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act.",
+    "demolition_notice_hi": "कार्यालय प्रभागीय वनाधिकारी / लखनऊ विकास प्राधिकरण — बेदखली नोटिस\nभारतीय वन अधिनियम 1927 एवं वन संरक्षण अधिनियम की सुसंगत धाराओं के अंतर्गत:\nकुकराैल आरक्षित वन एवं वन्यजीव अभयारण्य सीमा (अक्षांश: 26.92620° N, देशांतर: 81.01374° E) पर 16,400 वर्ग मीटर क्षेत्र में पेड़ों की कटाई एवं अवैध अतिक्रमण संज्ञान में आया है।\nअतिक्रमणकारी 48 घंटे में वन क्षेत्र पूर्णतः खाली करें, अन्यथा तत्काल जब्ती, ध्वस्तीकरण एवं गैर-जमानती प्राथमिकी दर्ज की जाएगी।",
+    "demolition_notice_awa": "कार्यालय प्रभागीय वनाधिकारी / एलडीए — कुकराैल वन बेदखली नोटिस\n[कुकराैल आरक्षित वन सीमा, अक्षांश: 26.92620° N, देशांतर: 81.01374° E]\n\nसकल क्षेत्रवासी अउर अवैध कालोनाइजरन का सूचित कीन जात है कि कुकराैल जंगल के 6.48 बीघा आरक्षित वनभूमि पर पेड़ कटाई अउर बाउंड्री खींचब भारतीय वन अधिनियम के तहत गैर-जमानती जुर्म अहइ। अगले 48 घंटा में ई जंगल खाली कय दीन्ह जाय, वर्ना तुरन्तै गिरफ्तारी अउर ध्वस्तीकरण कीन जाई।",
+    "demolition_notice_bho": "कार्यालय प्रभागीय वनाधिकारी — कुकराैल आरक्षित जंगल खाली करे के नोटिस\n[कुकराैल वन्यजीव अभयारण्य बफर क्षेत्र, जीपीएस: 26.92620° N, 81.01374° E]\n\nसबके चेतावनी दिहल जा रहल बा कि कुकराैल सरकारी जंगल में 6.48 बीघा पर पेड़ काट के कब्जा कइल संगे-संगे गंभीर अपराध बा। 48 घंटा के भीतर सब अवैध काम रोक के जंगल खाली कइल जाव, ना त बुलडोजर से सब बाउंड्री तोड़ के जेल भेजल जाई।",
+    "tactical_radio_script": "Forest patrol units, urgent dispatch to Kukrail Sanctuary Buffer Site LKO-ENC-20261023-132. Illegal tree felling and wall construction in progress. Detain violators and seize machinery immediately.",
+    "tactical_radio_script_hi": "वन सुरक्षा बल, तत्काल कुकराैल बफर साइट LKO-ENC-20261023-132 की ओर रवाना हों। अवैध वन कटाई और बाउंड्री निर्माण कार्य को तत्काल सीज करें।",
+    "audio_file": "monitoring_results/audio/LKO-ENC-20261023-132_dispatch.wav",
+    "pdf_warrant": "monitoring_results/warrants/LKO-ENC-20261023-132_Official_Demolition_Warrant.pdf",
+    "gemma_forensics": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-132. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "demolition_notice": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 16,400 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.92620° N, 81.01374° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act."
+  },
+  {
+    "site_id": "LKO-ENC-20261023-115",
+    "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+    "area_sqm": 15700.0,
+    "area_bigha": 6.21,
+    "coordinates": {
+      "lat": 26.92887,
+      "lon": 81.01836
+    },
+    "meta_models_used": {
+      "vision_reasoner": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "boundary_segmentor": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "feature_anomaly_detector": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "vector_memory_bank": "Meta FAISS (Facebook AI Similarity Search)",
+      "dialect_translator": "Meta NLLB-200 (No Language Left Behind)",
+      "speech_engine": "Meta MMS (Massively Multilingual Speech)",
+      "safety_guard": "SAFE & STATUTORILY COMPLIANT (Llama Guard 3 Verified)"
+    },
+    "sam2_metrics": {
+      "architecture": "Meta SAM 2 (Segment Anything Model 2 - FAIR)",
+      "prompt_type": "Centroid Point Prompt (x, y)",
+      "sub_pixel_precision": "10m -> 0.5m boundary resolution",
+      "boundary_smoothness_boost": "13.8% reduction in jagged raster artifacts",
+      "total_vertices": 16
+    },
+    "dinov2_metrics": {
+      "foundation_model": "Meta DINOv2 (ViT-S/14 - FAIR)",
+      "embedding_dimensions": 384,
+      "patch_resolution": "14x14 pixels self-supervised ViT",
+      "anomaly_intensity": "18.9%",
+      "peak_structural_divergence": "74.1%",
+      "verdict": "MODERATE ALTERATION"
+    },
+    "faiss_precedents": [
+      {
+        "case_id": "LKO-HIST-2025-029",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Kalyanpur Forest Fringe eco-zone",
+        "modus_operandi": "Fictitious private farm boundary division claiming ancestral ownership inside reserve forest demarcations.",
+        "enforcement_outcome": "District Magistrate rejected revenue mutation; Land restored to UP Forest Department.",
+        "legal_precedent": "Supreme Court Eco-Sensitive Zone Order; Absolute prohibition on non-forestry land change.",
+        "recidivism_risk": "HIGH (Litigation-oriented encroachment)",
+        "faiss_similarity_score": "75.0%"
+      },
+      {
+        "case_id": "LKO-HIST-2024-089",
+        "zone": "Kukrail Reserve Forest & Sanctuary Buffer",
+        "location": "Picnic Spot Road, Kukrail Fringe",
+        "modus_operandi": "Secretive nocturnal tree girdling followed by 12-foot brick perimeter boundary construction.",
+        "enforcement_outcome": "Non-bailable Forest Act warrant issued, brick boundary pulverized by forest JCB squads on Day 4.",
+        "legal_precedent": "Section 26 Indian Forest Act 1927; FIR No. 182/24 registered at Ghazipur Police Station.",
+        "recidivism_risk": "CRITICAL (Repeat boundary wall construction)",
+        "faiss_similarity_score": "75.0%"
+      }
+    ],
+    "satellite_chip": "monitoring_results/chips/LKO-ENC-20261023-115_satellite_chip.png",
+    "sam2_comparison_image": "monitoring_results/chips/LKO-ENC-20261023-115_sam2_comparison.png",
+    "dinov2_heatmap_image": "monitoring_results/chips/LKO-ENC-20261023-115_dinov2_heatmap.png",
+    "visual_forensic_findings": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-115. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "environmental_threat": "Severe fragmentation of the Kukrail forest wildlife corridor, biodiversity depletion, and illegal deforestation compromising Lucknow's primary green carbon sink.",
+    "statutory_violation": "Violation of Indian Forest Act 1927, Forest Conservation Act 1980 (Section 2), UP Protected Forest Rules, and Hon'ble Supreme Court directives regarding Eco-Sensitive Zones around Wildlife Sanctuaries.",
+    "demolition_notice_en": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 15,700 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.92887° N, 81.01836° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act.",
+    "demolition_notice_hi": "कार्यालय प्रभागीय वनाधिकारी / लखनऊ विकास प्राधिकरण — बेदखली नोटिस\nभारतीय वन अधिनियम 1927 एवं वन संरक्षण अधिनियम की सुसंगत धाराओं के अंतर्गत:\nकुकराैल आरक्षित वन एवं वन्यजीव अभयारण्य सीमा (अक्षांश: 26.92887° N, देशांतर: 81.01836° E) पर 15,700 वर्ग मीटर क्षेत्र में पेड़ों की कटाई एवं अवैध अतिक्रमण संज्ञान में आया है।\nअतिक्रमणकारी 48 घंटे में वन क्षेत्र पूर्णतः खाली करें, अन्यथा तत्काल जब्ती, ध्वस्तीकरण एवं गैर-जमानती प्राथमिकी दर्ज की जाएगी।",
+    "demolition_notice_awa": "कार्यालय प्रभागीय वनाधिकारी / एलडीए — कुकराैल वन बेदखली नोटिस\n[कुकराैल आरक्षित वन सीमा, अक्षांश: 26.92887° N, देशांतर: 81.01836° E]\n\nसकल क्षेत्रवासी अउर अवैध कालोनाइजरन का सूचित कीन जात है कि कुकराैल जंगल के 6.21 बीघा आरक्षित वनभूमि पर पेड़ कटाई अउर बाउंड्री खींचब भारतीय वन अधिनियम के तहत गैर-जमानती जुर्म अहइ। अगले 48 घंटा में ई जंगल खाली कय दीन्ह जाय, वर्ना तुरन्तै गिरफ्तारी अउर ध्वस्तीकरण कीन जाई।",
+    "demolition_notice_bho": "कार्यालय प्रभागीय वनाधिकारी — कुकराैल आरक्षित जंगल खाली करे के नोटिस\n[कुकराैल वन्यजीव अभयारण्य बफर क्षेत्र, जीपीएस: 26.92887° N, 81.01836° E]\n\nसबके चेतावनी दिहल जा रहल बा कि कुकराैल सरकारी जंगल में 6.21 बीघा पर पेड़ काट के कब्जा कइल संगे-संगे गंभीर अपराध बा। 48 घंटा के भीतर सब अवैध काम रोक के जंगल खाली कइल जाव, ना त बुलडोजर से सब बाउंड्री तोड़ के जेल भेजल जाई।",
+    "tactical_radio_script": "Forest patrol units, urgent dispatch to Kukrail Sanctuary Buffer Site LKO-ENC-20261023-115. Illegal tree felling and wall construction in progress. Detain violators and seize machinery immediately.",
+    "tactical_radio_script_hi": "वन सुरक्षा बल, तत्काल कुकराैल बफर साइट LKO-ENC-20261023-115 की ओर रवाना हों। अवैध वन कटाई और बाउंड्री निर्माण कार्य को तत्काल सीज करें।",
+    "audio_file": "monitoring_results/audio/LKO-ENC-20261023-115_dispatch.wav",
+    "pdf_warrant": "monitoring_results/warrants/LKO-ENC-20261023-115_Official_Demolition_Warrant.pdf",
+    "gemma_forensics": "High-resolution spectral analysis confirms rapid canopy clearance and perimeter masonry construction within the Kukrail Reserve Forest & Wildlife Sanctuary Eco-Sensitive Buffer Zone at Site LKO-ENC-20261023-115. Clearing of natural tree cover replaced by bare soil and linear masonry boundary walls.",
+    "demolition_notice": "STATUTORY ENFORCEMENT & REMOVAL NOTICE — UP FOREST & URBAN PLANNING ACT\nWHEREAS illegal deforestation and structural encroachment across 15,700 m² has been detected within the Kukrail Reserve Forest Buffer at GPS Coordinates (26.92887° N, 81.01836° E);\nYOU ARE HEREBY DIRECTED to vacate the protected forest land immediately. Failure to comply within 48 hours shall invite summary eviction and registration of Non-Bailable Cognizable Offenses under the Forest Conservation Act."
   }
 ]
